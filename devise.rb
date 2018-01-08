@@ -137,7 +137,8 @@ after_bundle do
   # Generators: db + simple form + pages controller
   ########################################
   rake 'db:drop db:create db:migrate'
-  # generate('simple_form:install', '--bootstrap')
+  spring stop
+  generate('simple_form:install', '--bootstrap')
   generate(:controller, 'pages', 'home', '--skip-routes')
 
   # Routes
